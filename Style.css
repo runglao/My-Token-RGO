@@ -25,9 +25,9 @@ body, html {
     background-color: rgba(146, 139, 139, 0.534);
     border: none;
     padding: 20px 40px;
-    margin-right: 750px;
+    margin-right: 700px;
     margin-top: 100px;
-    font-size: 2vw;
+    font-size: 3vw;
     cursor: pointer;
     border-radius: 100px;
     transition: background-color 0.3s;
