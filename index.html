@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Page Site with Center Button</title>
+    <link rel="stylesheet" href="D:\My WEB Crypto\GIGAcoin Channel\STYLE\Style.css">
+</head>
+<body>
+    <div class="container">
+        <button class="center-button" onclick="RGO()">Добавить RGO <br>В Кошелек</button>
+
+
+         
+        
+
+
+    </div>
+
+        
+   
+        <script>
+            async function RGO() {
+               const tokenAddress = '0x439CEcb4C22D595b15c7FD37de3E975AC1534cc8';
+               const tokenSymbol = 'RGO';
+               const tokenDecimals = 18;
+               const tokenImage = 'https://i.ibb.co/1mDxPtm/250-x250-RGO.png';
+
+              try {
+                  // 'wasAdded' is a boolean. Like any RPC method, an error can be thrown.  
+                  const wasAdded = await window.ethereum.request({
+                       method: 'wallet_watchAsset',
+                       params: {
+                         type: 'ERC20',
+                          options: {
+                             address: tokenAddress, // The address of the token.
+                              symbol: tokenSymbol, // A ticker symbol or shorthand, up to 5 characters.
+                             decimals: tokenDecimals, // The number of decimals in the token.
+                              image: tokenImage, // A string URL of the token logo.
+                            },
+                        },
+                    });
+
+                    if (wasAdded) {
+                       console.log('Thanks for your interest!');
+                    }  else {
+                       console.log('Your loss!');
+                    }
+                } catch (error) {
+                  console.log(error);
+                }
+            }
+
+        </script> 
+
+
+
+
+
+
+
+</body>
+</html>
